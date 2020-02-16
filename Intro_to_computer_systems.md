@@ -2,9 +2,33 @@
 
 [TOC]
 
+## IEEE floating point standard
+
+#### Two's complement 
+
+Invert all the bits and add one to the last bit (Find the negative value of the same number)
+
+
+
+#### Single precision (32 bits = 4 bytes)
+
+- 1 bit: **sign** (0: positive, 1: negative)
+- 8 bits: **exponent** 
+- 23 bits: **significand** (we don't keep 1 for the significand) --> change to scientific notation and keep all the bits after the decimal point.
+
+**Exponent code = exponent value + bias (127)**
+
+- exponent = 00000000
+  - denormalized number: assume the first bit in the scientific notation is 0
+- exponent = 11111111
+  - if significand is all 0's --> +- infinity
+  - else: NaN (not a number)
+
+
+
 ## Assembly
 
-A register can hold 32 bits = 4 bytes = 1 word 
+**A register can hold 32 bits = 4 bytes = 1 word** 
 
 `add`
 
@@ -73,13 +97,21 @@ Put the hexadecimal `0xFFF`
 
 `$ra`: Return address
 
-`$a1 ... $a3`: Arguments
+`$zero`: constant zero
 
-`$v1, $v2`: Return values
+`$a0 ... $a3`: Arguments
 
-`$s1 ... $s7`: Local variables
+`$v0, $v1`: Return values
+
+`$s0 ... $s7`: Local variables (no change when calling functions)
+
+`$t0 ... $t7`: temporary values
+
+`$sp`: stack pointer
 
 
+
+#### jump
 
 `jr $ra`: tell the system to continue at `$ra`
 
@@ -94,7 +126,35 @@ j sum
 
  
 
-#### Nested procedures
+#### Nested procedures (recall slide procedures)
+
+Memory allocation: Stack (`$sp` stack pointer), Heap, Static, Code
+
+```assembly
+addi $sp, $sp, -8  #allocate space on the stack
+sw $ra, 4($sp)     #save the return address
+sw $a1, 0($sp)     #save arg1
+
+# call the sub-procedure here
+
+lw $ra, 4($sp)     #restore the return address
+lw $a1, 0($sp)     #restore arg1
+addi $sp, $sp, 8   #restore stack
+jr $ra             #go back
+```
+
+Steps:
+
+1. save necessary values onto stack
+2. assign arguments
+3. `jal` call for the sub-procedure
+4. restore values from stack (and restore the stack)
+
+
+
+
+
+
 
 
 
