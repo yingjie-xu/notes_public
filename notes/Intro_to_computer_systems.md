@@ -152,9 +152,37 @@ Steps:
 
 
 
+### Representations (Machine language instructions)
+
+### R-format (register type)
+
+**opcode(6) | rs(5) | rt(5) | rd(6) | shamt(5) | funct(6)**
+
+opcode is always 0 in R-format
+
+rs: register source
+
+rt: register target
+
+rd: register destination
+
+example: `add`, `sll` --> most of the commands
 
 
 
+### I-format (immediate type)
+
+**opcode(6) | rs(5) | rt(5) | immediate(16)**
+
+examples: `addi`, `beq`, `bne`, `lw`, `sw`
+
+
+
+### J-format (jump type)
+
+**opcode(6) | target address(26)**
+
+examples: `j`, `jal`
 
 
 
