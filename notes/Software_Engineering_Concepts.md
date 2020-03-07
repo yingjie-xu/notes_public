@@ -2,6 +2,49 @@
 
 [TOC]
 
+## Software Engineering Process
+
+1. Specification 
+2. Development
+3. Validation
+4. Evolution
+
+### Waterfall
+
+- Requirement analysis & definition
+- System and software design
+- Implementation and unit testing
+- Integration and system testing
+- Operations and maintenance
+
+Pros:
+
+- rigid process
+- plan driven
+
+Cons:
+
+- activities are isolated
+  - late-changing
+
+> Fit: Embedded systems, safety-critical systems
+
+### Incremental
+
+Pros:
+
+- Flexible
+
+Cons:
+
+- Large organizations with many teams struggled to adopt
+
+> Fit: consumer software, web-based systems, mobile apps
+
+
+
+
+
 ## Framework Driven Development
 
 ### Library vs Framework (IoT)

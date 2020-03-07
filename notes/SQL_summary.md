@@ -159,3 +159,56 @@ DROP TABLE mytable;
 | `NOT NULL`           | This means that the inserted value can not be `NULL`.        |
 | `CHECK (expression)` | This allows you to run a more complex expression to test whether the values inserted are valid. For example, you can check that values are positive, or greater than a specific size, or start with a certain prefix, etc. |
 | `FOREIGN KEY`        | This is a consistency check which ensures that each value in this column corresponds to another value in a column in another table.  For example, if there are two tables, one listing all Employees by ID, and another listing their payroll information, the `FOREIGN KEY` can ensure that every row in the payroll table corresponds to a valid employee in the master Employee list. |
+
+
+
+# Database
+
+block = unit of transfer for disk read/write = page
+
+| Structure of DB              |
+| ---------------------------- |
+| SQL Client                   |
+| Query parsing & optimization |
+| Relational operators         |
+| Files and Index management   |
+| Buffer management            |
+| Disk Space management        |
+
+**Disk Space Management:**
+
+- **Lowest layer of DBMS, manages space on disk**
+- **Purpose:** 
+  - Map pages to locations on disk
+  - Load pages from disk to memory
+  - Save pages back to disk & ensuring writes
+
+- Higher levels call upon this layer to:
+  - Read/write a page
+  - Allocate/de-allocate logical pages
+
+
+
+Sloted Pages:
+
+file contain pages and pages contain records
+
+pages are managed
+
+- on disk by disk space manager
+- in memory by buffer manager
+
+
+
+File Organizations:
+
+- Heap Files: Suitable when typical access is a full scan of all records
+
+- Sorted Files: Best for retrieval in order, or when a range of records is needed
+
+- Clustered Files & Indexes: Group data into blocks to enable fast lookup and efficient modifications.
+
+
+
+
+
