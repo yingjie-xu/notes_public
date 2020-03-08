@@ -9,6 +9,8 @@
 3. Validation
 4. Evolution
 
+
+
 ### Waterfall
 
 - Requirement analysis & definition
@@ -29,7 +31,11 @@ Cons:
 
 > Fit: Embedded systems, safety-critical systems
 
+
+
 ### Incremental
+
+Fast release!
 
 Pros:
 
@@ -42,6 +48,258 @@ Cons:
 > Fit: consumer software, web-based systems, mobile apps
 
 
+
+### Agile (Scrum)
+
+- Individuals & interaction > Processes & tools
+- working software > comprehensive documentation
+- customer collaboration > contract negotiation
+- reacting to change > following plan
+
+**Planning**
+
+- release planning (several months)
+- sprint / iteration planning (2-4 weeks)
+
+**Sprints**
+
+- units of time for agile (scrum-based)
+- begin with **planning session** (backlog tasks)
+- end with **retrospective** (improve?)
+
+**Backlog**
+
+- backlog is a list of outstanding tasks to be completed
+  - can add or change priority
+  - task is never removed
+- ordered by priority
+- tasks usually map to issue reports
+
+**User Stories**
+
+- User requirement written in customer’s language
+- As a `type of user`, I would like `feature description` so that `rationale`
+
+**Epics**
+
+- Long-term objectives in agile software projects
+- Composed of a set of related user stories that may span multiple sprints
+
+**Story Points**: Unit of effort estimation
+
+- product manager assign
+- planning poker
+
+**Velocity**: How many ranked user stories can be completed in a given time?
+
+> sprint planning --> daily scrum (stand-up) --> sprint/iteration review --> sprint retrospective
+
+
+
+---
+
+
+
+## Version Control System
+
+Offline accessibility: git is Distributed Version Control System (DVCS)
+
+Branch and merge operations: DVCS clients can create and merge branches as lightweight operations on their client machines
+
+
+
+### Git Operations
+
+`git clone`
+
+`git log \ git branch \ git tag`
+
+`git checkout <branch> <commit>`
+
+`git add`  
+
+`git commit`
+
+`git merge`
+
+`git reset \ revert \ rebase`
+
+`git push`
+
+`git fetch \ pull`
+
+
+
+### GitHub
+
+The defacto standard Git service provider: 
+
+- GitHub hosts Git repositories for open source and proprietary software projects
+
+Features:
+
+- Fork 
+  - Forking allows you to create a deep copy of said repository in your own GitHub profile
+- Pull Request 
+  - A pull request signals to the forked repository that your fork contains changes that you’d like to integrate
+  - After pushing changes from your client to your fork repo, you can create a pull request from its GitHub page
+- Issue tracking
+  - Issues are used to plan project development
+- Social feature
+
+
+
+### Software Release & Continuous Integration (CI)
+
+1. Integration
+
+2. Build
+
+3. Deployment
+
+   Loop: Commit --> Build --> Test --> Report
+
+**CI tools:** 
+
+- Download and install: Hudson/Jenkins; CruiseControl; Buildbot
+- Cloud-based: CloudBees; TravisCI; CircleCI
+
+
+
+---
+
+
+
+## Build System
+
+Build systems describe how sources are translated into deliverables
+
+- **low-level**
+  - explicitly defined dependencies and rules for each input and output file
+- **abstraction-based**
+  - derive low-level build code from high-level data like maps of deliverables to file lists
+- **framework-driven**
+  - Follows the principle of **<u>“convention over configuration,”</u>** where default
+    behavior is assumed unless explicitly overridden
+- **testing-frameworks**
+  - Manage the execution of automated tests and generate reports
+- **dependency-management**
+  - Resolve and acquire dependent libraries and tools
+
+
+
+###  Low-level (make file)
+
+- expressing dependencies
+- writing recipes
+
+
+
+### Framework-driven
+
+#### Maven
+
+- Maven assumes that a build job follows a **lifecycle** 
+- A lifecycle is a sequential series of **phases** 
+- A phase performs a series of **goals** that are bound via **plugins**
+
+**lifecycle**
+
+- Default: Produces the project deliverables 
+- Clean: Undoes build commands to return the project to its initial state (i.e., just after cloning and checkout)
+- Site: Generates the project website materials
+
+
+
+#### Gradle
+
+**Gradle build model** 
+
+- **Task graph**: Directed acyclic graph (DAG) of tasks
+
+- Gradle determines which tasks to run based on that
+
+**Tasks: units of work** 
+
+- **Actions**: copy file, compile source, etc. 
+- **Inputs**: values, files, directories on which actions operate
+- **Outputs**: files, directories that the actions modify
+
+**Configuration files** 
+
+- Determined by naming conventions
+- `settings.gradle`: project initialization and configuration
+- `build.gradle`: definition of build tasks (Groovy-style)
+
+> Initialization --> Configuration --> Execution
+
+> Gradle phases != Maven phases 
+>
+> Maven phase ≈ Gradle task graph
+
+
+
+---
+
+
+
+## Requirements Engineering
+
+Requirements are either: 
+
+1. A condition or capability needed by a user to solve a problem or achieve an objective.
+2. A condition or capability that must be met or possessed by a system […] to satisfy a contract, standard, specification, or other formally imposed document.
+
+
+
+### User requirements (High-level reqs) everyone understands
+
+Describe the services the system is expected to provide
+
+
+
+### System requirements (Low-level reqs) detailed
+
+Detailed descriptions of system functions and operational constraints
+
+
+
+### Functional requirements 
+
+- Describe what the system should do
+- Typically attributed to one component of the system
+- Typical form: “The system shall do …”
+
+
+
+### Non-functional (extrafunctional) requirements
+
+- Specify properties of the system as a whole
+- Typical form: “The system shall be …” (but many variations are possible)
+- Be careful: often overlooked
+
+> Speed, size, ease of use, reliability, robustness, protability
+
+
+
+### Challenges
+
+- Ambiguous: 
+  - Understood differently by different teams 
+- Incomplete: 
+  - Some system features are missing 
+- Inconsistent: 
+  - Requirements are contradicting with each other 
+- Unquantifiable: 
+  - Cannot be validated / measured 
+  - E.g. "System should be bug free"
+- What vs. how: 
+  - Never describe <u>how</u> the system should deliver the requirement
+  - Focus on <u>what</u> the system should do
+
+
+
+---
 
 
 
@@ -62,9 +320,17 @@ Cons:
   - **Dependency injection** (a form of inversion of control)
     - Dependencies in the framework code are satisfied by application code that injects those dependencies
 
+
+
 ### API (Application programming interface)
 
 An API specifies how software components should interact.
+
+
+
+---
+
+
 
 ## RESTful Services (Representational State Transfer)
 
@@ -111,6 +377,10 @@ Representation for passing data: JSON (JavaScript Object Notation) & XML
 **Business Entities**: The entire business object is retrieved to client
 
 **DTO**: Only a restricted view of the business entity is retrieved to the client.
+
+
+
+---
 
 
 
