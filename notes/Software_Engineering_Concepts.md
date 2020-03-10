@@ -299,6 +299,170 @@ Detailed descriptions of system functions and operational constraints
 
 
 
+### Characteristics of Good Requirements
+
+- Feasibility - Avoid wishful thinking
+- Necessity - Provides the details of the desired end goal
+- Testability - Contains quantifiable success criteria
+
+
+
+---
+
+
+
+## UML (Unified Modeling Language)
+
+- Workflow / business process / behavior / communication
+  - UML activity diagrams
+  - UML sequence diagrams
+- Functions / use cases
+  - UML use case diagrams
+- Domain models / data structures
+  - UML class diagram
+
+
+
+### Use case diagrams 
+
+- Capture main features / functions of the system
+- Capture how end users interact with the system
+- Using a graphical notation
+
+**Actors**: 
+
+- Role played in the system
+
+- Depicted using stick figures
+- Can represent a user or an external system
+
+**Use Case**:
+
+-  Naming: Verb + Subject
+
+**Connections**: 
+
+- Lines connect the actors to use cases that they can initiate
+
+**Good Practices**:
+
+- Put the most important Actors and UCs to the top-left corner
+- Use several diagrams to avoid clutter (at most 5-7 UCs per diagram)
+- Actors on the left/ right, UCs in the middle
+
+
+
+### Class diagrams
+
+- Capture key concepts and relations in a domain
+- Frequently serves as basis of database design
+  - used by **object-relational mapping (ORM)** (Hibernate)
+- Defines structure of various serialization formats
+
+[Read more here](https://github.com/yingjie-xu/notes_public/blob/master/notes/uml_diagrams.pdf)
+
+
+
+---
+
+
+
+## Data Persistence Technologies
+
+Application data should persist when: 
+
+- the application is closed 
+- If the application crashes (hopefully, this doesn’t happen!)
+
+**Database**
+
+- Are designed to store and retrieve data efficiently
+- Pros: 
+  - Space-efficient (uses as little storage space as possible)
+  - Quick (data retrieval is usually fast)
+
+- Cons: 
+  - Complex 
+  - Requires specialized maintenance and operators
+
+[Read more here](https://github.com/yingjie-xu/notes_public/blob/master/notes/SQL_summary.md)
+
+How to systematically design such tables? 
+
+- Design data storage in domain models
+
+- Use object-relational mapping (ORM)
+
+
+
+### Java Database Connectivity (JDBC)
+
+- A Java standard that defines the API for connecting Java applications to DBMSs
+- There are JDBC drivers that implement the API for most of the popular DBMSs
+
+Pros: 
+
+- Gives powerful, low-level access to the power of SQL from within the Java programming environment
+
+- Errors can be handled smoothly using standard Java exception handling practices (i.e., try-catch blocks)
+
+Cons: 
+
+- SQL statements tend to be embedded in the Java code, leading do increased program complexity
+
+- A mapping between concepts in the object-oriented (Java) and the relational DB (SQL) scopes needs to be specified and maintained (painful for large applications)
+
+
+
+### Object Relational Mapping (ORM)
+
+An OO programming concept that defines a design time mapping 
+
+- Input: 
+  - Domain model (UML Class Diagram)
+
+- Output: 
+  - Relational database tables (e.g. SQL commands)
+  - Foreign key constraints
+
+**Tools:**
+
+- Java Persistence API (**JPA**) --> **style**
+- **Hibernate** (ORM tool) --> **tool** of the style
+
+
+
+### Java Persistence Query Language (JPQL)
+
+- Declarative object-oriented query language for JPA
+- Syntax is similar to SQL 
+- Query retrieves a set of entities (objects) 
+  - Rather then rows as in SQL
+- Each query is accessible as a query method
+- `@Query` annotation contains the JPQL query
+
+```java
+@Query("SELECT c FROM Course c") 
+Collection<Course> findAllCourses();
+```
+
+
+
+### CRUD Operations
+
+- Create 
+- Read 
+- Update
+- Delete
+
+
+
+### JPA Entity Lifecycle
+
+[Read more here](https://www.objectdb.com/java/jpa/persistence/managed)
+
+
+
 ---
 
 
