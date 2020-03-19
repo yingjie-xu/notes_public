@@ -1,6 +1,8 @@
 # notes_public
 Personal study notes of computer science courses
 
+## Summarized by myself
+
 | Note                                                         | Description & Reference                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [basic_java_notes](https://github.com/yingjie-xu/notes_public/blob/master/notes/basic_java_notes.pdf) | A study guide covers basic and important knowledge of java. Referenced from courses [CS61B](https://sp18.datastructur.es/), [COMP250](https://www.mcgill.ca/study/2018-2019/courses/comp-250) |
@@ -11,5 +13,19 @@ Personal study notes of computer science courses
 | [software_engineering](https://github.com/yingjie-xu/notes_public/blob/master/notes/Software_Engineering_Concepts.md) | Study notes of the course [ECSE 321](https://www.mcgill.ca/study/2019-2020/courses/ecse-321) |
 | [sql_summary](https://github.com/yingjie-xu/notes_public/blob/master/notes/SQL_summary.md) | Notes of SQL commands and the order of execution of SQL queries. [some more examples](https://github.com/yingjie-xu/notes_public/blob/master/notes/database.sql) covered in [COMP 421](https://www.mcgill.ca/study/2019-2020/courses/comp-421). [cheat sheet for database concepts](https://github.com/yingjie-xu/notes_public/blob/master/notes/database.pdf) |
 
+## Other Resources
+
+| Topic    | Learning Resources                                           |
+| -------- | ------------------------------------------------------------ |
+| Python   | [python cheatsheet](https://github.com/gto76/python-cheatsheet) |
+| JS       | [AirBnb JS guide](https://github.com/airbnb/javascript) / [You-Dont-Know-JS](https://github.com/getify/You-Dont-Know-JS) |
+| Frontend | [front-end-interview-handbook](https://github.com/yangshun/front-end-interview-handbook) |
+| Data Sci | [data-science-ipython-notebooks](https://github.com/donnemartin/data-science-ipython-notebooks) |
+| Other | [Cyc-CS-Notes](https://github.com/CyC2018/CS-Notes) / [tech-interview-handbook](https://github.com/yangshun/tech-interview-handbook) |
+
+## License
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/yingjie-xu/notes_public/blob/master/LICENSE)
+
+
 
