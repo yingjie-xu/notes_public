@@ -12,6 +12,7 @@ Personal study notes of computer science courses
 | [computer_systems](https://github.com/yingjie-xu/notes_public/blob/master/notes/Intro_to_computer_systems.md) | Basic MIPS assembly notes. Study notes of the course [COMP 273](https://www.mcgill.ca/study/2019-2020/courses/comp-273) |
 | [software_engineering](https://github.com/yingjie-xu/notes_public/blob/master/notes/Software_Engineering_Concepts.md) | Study notes of the course [ECSE 321](https://www.mcgill.ca/study/2019-2020/courses/ecse-321) |
 | [sql_summary](https://github.com/yingjie-xu/notes_public/blob/master/notes/SQL_summary.md) | Notes of SQL commands and the order of execution of SQL queries. [some more examples](https://github.com/yingjie-xu/notes_public/blob/master/notes/database.sql) covered in [COMP 421](https://www.mcgill.ca/study/2019-2020/courses/comp-421). [cheat sheet for database concepts](https://github.com/yingjie-xu/notes_public/blob/master/notes/database.pdf) |
+| [python_for_interview](https://colab.research.google.com/drive/1AsP_VQCG35xIwfl74TL-cmmPnuBVLsGq?usp=sharing) | Review sheet for algorithm interview with Python |
 
 ## Other Resources
 
